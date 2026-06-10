@@ -39,5 +39,13 @@ public class Ex02_41 {
         Gerente g= new Gerente("Jose","005",50,"Vendas");
         System.out.print("        GERENTE    ");
         System.out.print(g.toString());
+        
+        
+        System.out.println();
+        Funcionario f1= new Funcionario();
+        System.out.println(" Preechendo Dados de  Funcionario");
+        f1.preencher();
+        System.out.print("   FUNCIONARIO    ");
+        System.out.println(f1.toString());
     }
 }

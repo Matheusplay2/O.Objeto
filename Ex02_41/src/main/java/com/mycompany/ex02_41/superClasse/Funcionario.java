@@ -8,9 +8,32 @@ import java.util.Scanner;
  *
  * @author matheus henrique
  */
+
+//usando esta classe como abstrata para proximo exercicio
+//  seria vc meio que descrever o nome de um metodo e poder usa-lo em qualquer uma subClasse
+// na superClasse ele tem que ser abstrato e nao vai ter nada dentro dele e para usar nas outras classes vc faz 
+//o metodo que vc deseja para tal classe
+
+//      NA SUPER-CLASSE 
+//   abstract   public double  getBonificacao();
+
+//      NA SUB-CLASSE
+// public double getBonificacao(){
+//  return  super.salario* 0.15;
+// na classe filha vc faz a implementacao
+//}
+
+// DIGAMOS QUE SE A CLASSE FILHA NAO IMPLEMENTAR TODOS OS METODOS DA CLASSE PAI
+// ELA IRA SE TORNAR UMA CLASSE ABSTRATA TBM 
+// NAO PODENDO SER ISTANCIADA
+//   abstract class Funcionario{
+//    protected String nome;
+//    protected String cpf;
+//    protectede int idd;
+//}
 public class Funcionario {
     private String nome;
-    private String cpf;
+    private  String cpf;
     private int idd;
 
     public Funcionario() {
