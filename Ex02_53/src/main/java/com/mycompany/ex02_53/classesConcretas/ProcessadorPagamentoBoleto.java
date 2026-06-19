@@ -13,7 +13,7 @@ public class ProcessadorPagamentoBoleto implements IProcessadorPagamento {
     
     @Override
      public void processarPagamento(){
-         System.out.println("Pagamento por boleto");
+         System.out.println("Pagamento via Boleto......");
          
      }
 }

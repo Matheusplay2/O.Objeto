@@ -11,7 +11,7 @@ public class ProcessadorPagamentoCartao implements IProcessadorPagamento{
     
     @Override
      public void processarPagamento(){
-         System.out.println("Pagamento por cartao(Debito,Credito)");
+         System.out.println("Pagamento via cartao(Debito,Credito)");
          
      }
     
