@@ -1,6 +1,7 @@
 
 package com.mycompany.exclasseabst;
 
+import com.mycompany.exclasseabst.abstracts.Funcionario;
 import com.mycompany.exclasseabst.classes.Gerente;
 
 /**
@@ -10,7 +11,7 @@ import com.mycompany.exclasseabst.classes.Gerente;
 public class ExClasseAbst {
 
     public static void main(String[] args) {
-        Gerente g = new Gerente("Matheus",1000);
+        Funcionario   g = new Gerente("Matheus",1000);
         System.out.println(g);
     }
 }

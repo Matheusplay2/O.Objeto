@@ -9,8 +9,8 @@ public class Secretario extends Funcionario {
     public Secretario(String nome, double salario) {
         super(nome, salario);
     }
-   @Override
+     @Override
    public  double getBonus(){    
        return super.salario * 0.13;
-   }
+    }
 }
