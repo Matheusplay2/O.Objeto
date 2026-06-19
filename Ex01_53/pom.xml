@@ -9,7 +9,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
-        <exec.mainClass>com.mycompany.ex01_52.Ex01_52</exec.mainClass>
+        <exec.mainClass>com.mycompany.ex01_53.Ex01_53</exec.mainClass>
     </properties>
     <name>Ex01_53</name>
 </project>

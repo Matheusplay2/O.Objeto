@@ -4,7 +4,7 @@ package com.mycompany.ex01_53.classesConcretas;
 import com.mycompany.ex01_53.classeAbs.IEnviadorMensagem;
 
 
-public class EnviadorTelegram extends IEnviadorMensagem{
+public class EnviadorTelegram implements IEnviadorMensagem{
 
     public EnviadorTelegram() {
     }
