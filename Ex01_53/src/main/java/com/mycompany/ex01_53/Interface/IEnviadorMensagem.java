@@ -1,5 +1,5 @@
 
-package com.mycompany.ex01_53.classeAbs;
+package com.mycompany.ex01_53.Interface;
 
 /**
  *

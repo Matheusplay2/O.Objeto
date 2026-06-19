@@ -1,7 +1,7 @@
 
 package com.mycompany.ex01_53.Servicos;
 
-import com.mycompany.ex01_53.classeAbs.IEnviadorMensagem;
+import com.mycompany.ex01_53.Interface.IEnviadorMensagem;
 
 
 public class ProcessadorMensagem {
