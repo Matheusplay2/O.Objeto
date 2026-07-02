@@ -8,7 +8,7 @@ public class Livro {
     public Livro() {
         this.titulo="";
         this.ano=0;
-        this.autor= new Autor();
+        this.autor= null;
     }
 
     public Livro(String titulo, int ano, Autor autor) {

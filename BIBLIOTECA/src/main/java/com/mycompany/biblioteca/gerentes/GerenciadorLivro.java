@@ -1,16 +1,23 @@
 package com.mycompany.biblioteca.gerentes;
 
+import com.mycompany.biblioteca.arquivos.FilePersistence;
+import com.mycompany.biblioteca.arquivos.SerializadorLivroCSV;
 import com.mycompany.biblioteca.classes.Autor;
 import com.mycompany.biblioteca.classes.Livro;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GerenciadoresLivro {
+public class GerenciadorLivro {
     private List <Livro> lstLivro;
+    private String caminho;
+   
 
-    public GerenciadoresLivro() {
+    public GerenciadorLivro() {
         this.lstLivro= new ArrayList<>();
     }
+    
     
     
     public void add(Livro livro){
@@ -47,6 +54,21 @@ public class GerenciadoresLivro {
           }
        return resultado;
         
+    }
+     public void salvarNoArquivo() throws IOException {
+        SerializadorLivroCSV serializador = new SerializadorLivroCSV();
+        String csvData = serializador.toCsv(this.lstLivro);
+        FilePersistence filePersistence = new FilePersistence();
+        filePersistence.saveToFile(csvData, this.caminho);
+        System.out.println("Livro salvo com sucesso em " + this.caminho);
+    }
+
+    public void carregarDoArquivo() throws FileNotFoundException {
+        FilePersistence filePersistence = new FilePersistence();
+        String csvData = filePersistence.loadToFile(this.caminho);
+        SerializadorLivroCSV serializador = new SerializadorLivroCSV();
+        this.lstLivro = serializador.fromCSV(csvData);
+        System.out.println("Livros  carregados com sucesso de " + this.caminho);
     }
     
 }
