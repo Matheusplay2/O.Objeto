@@ -1,7 +1,7 @@
 package com.mycompany.biblioteca.gerentes;
 
 import com.mycompany.biblioteca.arquivos.FilePersistence;
-import com.mycompany.biblioteca.arquivos.SerializadorLivroCSV;
+import com.mycompany.biblioteca.arquivos.SerializadorLivroJSON;
 import com.mycompany.biblioteca.classes.Autor;
 import com.mycompany.biblioteca.classes.Livro;
 import java.io.FileNotFoundException;
@@ -56,8 +56,8 @@ public class GerenciadorLivro {
         
     }
      public void salvarNoArquivo() throws IOException {
-        SerializadorLivroCSV serializador = new SerializadorLivroCSV();
-        String csvData = serializador.toCsv(this.lstLivro);
+        SerializadorLivroJSON serializador = new SerializadorLivroJSON();
+        String csvData = serializador.livroToJSON((Livro) this.lstLivro);
         FilePersistence filePersistence = new FilePersistence();
         filePersistence.saveToFile(csvData, this.caminho);
         System.out.println("Livro salvo com sucesso em " + this.caminho);
@@ -66,8 +66,8 @@ public class GerenciadorLivro {
     public void carregarDoArquivo() throws FileNotFoundException {
         FilePersistence filePersistence = new FilePersistence();
         String csvData = filePersistence.loadToFile(this.caminho);
-        SerializadorLivroCSV serializador = new SerializadorLivroCSV();
-        this.lstLivro = serializador.fromCSV(csvData);
+        SerializadorLivroJSON serializador = new SerializadorLivroJSON();
+        this.lstLivro = (List<Livro>) serializador.JSONTo(csvData);
         System.out.println("Livros  carregados com sucesso de " + this.caminho);
     }
     
