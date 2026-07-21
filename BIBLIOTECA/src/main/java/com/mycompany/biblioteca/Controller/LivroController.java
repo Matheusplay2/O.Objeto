@@ -9,12 +9,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GerenciadorLivro {
+public class LivroController {
     private List <Livro> lstLivro;
     private String caminho;
    
 
-    public GerenciadorLivro() {
+    public LivroController() {
         this.lstLivro= new ArrayList<>();
     }
     

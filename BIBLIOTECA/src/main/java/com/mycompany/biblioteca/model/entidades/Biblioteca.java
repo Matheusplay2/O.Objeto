@@ -2,19 +2,19 @@ package com.mycompany.biblioteca.model.entidades;
 
 
 
-import com.mycompany.biblioteca.Controller.GerenciadorAutor;
-import com.mycompany.biblioteca.Controller.GerenciadorLivro;
+import com.mycompany.biblioteca.Controller.AutorController;
+import com.mycompany.biblioteca.Controller.LivroController;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
 
 public class Biblioteca {
-    private GerenciadorLivro gerenciadorLivro;
-    private GerenciadorAutor gerenciadorAutor;
+    private LivroController gerenciadorLivro;
+    private AutorController gerenciadorAutor;
 
     public Biblioteca() throws FileNotFoundException {
-        this.gerenciadorLivro = new GerenciadorLivro();
-        this.gerenciadorAutor = new GerenciadorAutor();
+        this.gerenciadorLivro = new LivroController();
+        this.gerenciadorAutor = new AutorController();
         
 //        INICIANDO OS GERENCIADORES PRA QUANDO ABRIR A TELA DA BBT JA TER OS DADOS SALVOSS
 

@@ -1,30 +1,34 @@
 
 package com.mycompany.biblioteca.Controller;
 
+import com.mycompany.biblioteca.model.Valid.ValidadorAutor;
+import com.mycompany.biblioteca.model.dao.IDAO;
 import com.mycompany.biblioteca.model.files.FilePersistence;
 import com.mycompany.biblioteca.model.files.SerializadorAutorJSON;
 import com.mycompany.biblioteca.model.entidades.Autor;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 
-public class GerenciadorAutor {
-    private List <Autor> lstAutor;
-    private String caminho;
+public class AutorController {
+    private IDAO repositorio;
 
-    public GerenciadorAutor() {
-        this.lstAutor= new ArrayList<>();
+    public AutorController(IDAO repositorio) {
+        this.repositorio = repositorio;
     }
+
+ 
     
     
    
-    public void add(Autor autor){
-        this.lstAutor.add(autor);
+    public void add(String nome,String cddNatal){
+        ValidadorAutor valid= new ValidadorAutor();
+        Autor novoAutor= valid.validacao(nome, cddNatal);
+        repositorio.add(novoAutor);
      }
     
-    public boolean remover(String nome, String cddNatal){
+    public void remover(String nome, String cddNatal){
         for(Autor a: this.lstAutor){
            if(a.getNome().equals(nome)&& a.getCddNatal().equals(cddNatal)){ 
             this.lstAutor.remove(a);
@@ -52,7 +56,8 @@ public class GerenciadorAutor {
         } 
         return resultado;
     }
-        public void salvarNoArquivo() throws IOException {
+    
+    public void salvarNoArquivo() throws IOException {
     SerializadorAutorJSON serializador = new SerializadorAutorJSON();
     String jsonData = serializador.autorToJSON((Autor) this.lstAutor);
     FilePersistence filePersistence = new FilePersistence();
