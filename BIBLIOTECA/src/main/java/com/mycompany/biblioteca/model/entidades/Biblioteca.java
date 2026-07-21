@@ -1,11 +1,12 @@
-package com.mycompany.biblioteca.classes;
+package com.mycompany.biblioteca.model.entidades;
 
-import com.mycompany.biblioteca.gerentes.GerenciadorAutor;
-import com.mycompany.biblioteca.gerentes.GerenciadorLivro;
+
+
+import com.mycompany.biblioteca.Controller.GerenciadorAutor;
+import com.mycompany.biblioteca.Controller.GerenciadorLivro;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class Biblioteca {
     private GerenciadorLivro gerenciadorLivro;

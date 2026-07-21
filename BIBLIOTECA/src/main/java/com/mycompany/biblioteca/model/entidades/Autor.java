@@ -1,4 +1,4 @@
-package com.mycompany.biblioteca.classes;
+package com.mycompany.biblioteca.model.entidades;
 
 import java.util.Objects;
 

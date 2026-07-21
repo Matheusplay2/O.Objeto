@@ -1,8 +1,8 @@
-package com.mycompany.biblioteca.arquivos;
+package com.mycompany.biblioteca.model.files;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mycompany.biblioteca.classes.Autor;
+import com.mycompany.biblioteca.model.entidades.Autor;
 
 public class SerializadorAutorJSON {
 

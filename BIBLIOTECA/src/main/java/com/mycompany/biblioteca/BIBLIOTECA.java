@@ -1,6 +1,6 @@
 package com.mycompany.biblioteca;
 
-import com.mycompany.biblioteca.classes.Autor;
+import com.mycompany.biblioteca.model.entidades.Autor;
 
 public class BIBLIOTECA {
 

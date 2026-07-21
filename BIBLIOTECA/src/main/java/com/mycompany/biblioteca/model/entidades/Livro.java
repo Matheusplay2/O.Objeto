@@ -1,4 +1,6 @@
-package com.mycompany.biblioteca.classes;
+package com.mycompany.biblioteca.model.entidades;
+
+import com.mycompany.biblioteca.model.entidades.Autor;
 
 public class Livro {
     private String titulo;

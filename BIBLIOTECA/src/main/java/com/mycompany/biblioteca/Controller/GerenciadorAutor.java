@@ -1,9 +1,9 @@
 
-package com.mycompany.biblioteca.gerentes;
+package com.mycompany.biblioteca.Controller;
 
-import com.mycompany.biblioteca.arquivos.FilePersistence;
-import com.mycompany.biblioteca.arquivos.SerializadorAutorJSON;
-import com.mycompany.biblioteca.classes.Autor;
+import com.mycompany.biblioteca.model.files.FilePersistence;
+import com.mycompany.biblioteca.model.files.SerializadorAutorJSON;
+import com.mycompany.biblioteca.model.entidades.Autor;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;

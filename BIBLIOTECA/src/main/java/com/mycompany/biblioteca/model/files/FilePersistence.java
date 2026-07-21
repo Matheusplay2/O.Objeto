@@ -1,5 +1,5 @@
 
-package com.mycompany.biblioteca.arquivos;
+package com.mycompany.biblioteca.model.files;
 
 import java.io.File;
 import java.io.FileNotFoundException;
