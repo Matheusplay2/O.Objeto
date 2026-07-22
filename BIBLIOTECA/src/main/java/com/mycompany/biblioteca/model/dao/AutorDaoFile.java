@@ -8,6 +8,7 @@ import com.mycompany.biblioteca.model.files.ISerializadorAutor;
 import com.mycompany.biblioteca.model.files.SerializadorAutorJSON;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -49,7 +50,7 @@ public class AutorDaoFile implements IAutorDao {
             String jsonData = serializador.toFile(autores);
             try {
                 filePersistence.saveToFile(jsonData, caminhoArquivo);
-                System.out.println("Produto removido com sucesso do arquivo.");
+                System.out.println("Autor removido com sucesso do arquivo.");
             
             } catch (IOException e) {
                  System.out.println("Nao foi possivel remover autor do arquivo "+ e.getMessage());
@@ -83,18 +84,8 @@ public class AutorDaoFile implements IAutorDao {
         } catch (FileNotFoundException e) {
             System.out.println("Nao foi possivel encontrar todos os autores "+ e.getMessage());
         }
-        return null;
-       
-    }
-
-    private void gravar(List<Autor> autores) {
-        try {
-            String jsonData = serializador.toFile(autores);
-            filePersistence.saveToFile(jsonData, caminhoArquivo);
-        } catch (IOException e) {
-            System.out.println("Erro ao gravar autores no arquivo: " + e.getMessage());
-        
-      }
+        return new ArrayList<>();
+   
     }
 }
 
