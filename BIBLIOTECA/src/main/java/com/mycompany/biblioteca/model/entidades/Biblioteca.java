@@ -24,8 +24,9 @@ public class Biblioteca {
        
 
 //   Parte dos autores e seus metodos 
- public void addAutor(Autor autor) {
-        gerenciadorAutor.add(autor);
+ public void addAutor(String nome , String cddNatal) {
+        Autor autor = new Autor();
+        gerenciadorAutor.salvar(S);
         
     }
 

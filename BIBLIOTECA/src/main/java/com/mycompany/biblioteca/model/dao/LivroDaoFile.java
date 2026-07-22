@@ -1,29 +1,35 @@
 
 package com.mycompany.biblioteca.model.dao;
 
-import com.mycompany.biblioteca.model.Exceptions.DaoException;
+import com.mycompany.biblioteca.model.entidades.Autor;
+import com.mycompany.biblioteca.model.entidades.Livro;
 import java.util.List;
 
-public class LivroDaoFile implements IDAO{
+public class LivroDaoFile implements ILivroDao{
 
     @Override
-    public void add(Object objeto) throws DaoException {
-        throw new UnsupportedOperationException("Not supported yet."); 
+    public void salvar(Livro livro) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void remover(Object objeto) throws DaoException {
-        throw new UnsupportedOperationException("Not supported yet."); 
+    public void remover(String titulo) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void atualizar(Object objeto) throws DaoException {
-        throw new UnsupportedOperationException("Not supported yet."); 
+    public void atualizar(String titulo) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public List listarTodos() throws DaoException {
-        throw new UnsupportedOperationException("Not supported yet."); 
+    public Livro pesquisar(String titulo, Autor autor) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
+
+    @Override
+    public List<Livro> listarTodos() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }

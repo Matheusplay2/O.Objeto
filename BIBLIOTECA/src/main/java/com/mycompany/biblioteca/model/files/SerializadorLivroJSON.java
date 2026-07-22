@@ -1,34 +1,36 @@
-
 package com.mycompany.biblioteca.model.files;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mycompany.biblioteca.model.entidades.Livro;
+import java.util.List;
 
 
-public class SerializadorLivroJSON {
-    
-        
-     public String livroToJSON(Livro livro) {
+
+public class SerializadorLivroJSON implements ISerializadorLivro {
+
+    @Override
+    public String toFile(List<Livro> livros) {
         try {
-            // Convertendo objeto livro para JSON
             ObjectMapper mapper = new ObjectMapper();
-            String jsonString = mapper.writeValueAsString(livro);
-
+            String jsonString = mapper.writeValueAsString(livros);
             return jsonString;
-        } catch (JsonProcessingException e) {
-            return null;
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+        return null;
     }
 
-    public Livro JSONTo(String jsonString) {
+    @Override
+    public List<Livro> fromFile(String jsonString) {
         try {
             ObjectMapper mapper = new ObjectMapper();
-            Livro livro = mapper.readValue(jsonString, Livro.class);
-
-            return livro;
-        } catch (JsonProcessingException e) {
+            List<Livro> livros = mapper.readValue(jsonString, new TypeReference<List<Livro>>() {});
+            return livros;
+        } catch (Exception e) {
+            e.printStackTrace();
             return null;
         }
     }
 }
+
