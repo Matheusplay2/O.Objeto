@@ -1,83 +1,60 @@
 package com.mycompany.biblioteca.model.entidades;
 
 
-
 import com.mycompany.biblioteca.Controller.AutorController;
 import com.mycompany.biblioteca.Controller.LivroController;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import com.mycompany.biblioteca.model.dao.IAutorDao;
+import com.mycompany.biblioteca.model.dao.ILivroDao;
 
+import java.util.List;
 
 public class Biblioteca {
+
     private LivroController gerenciadorLivro;
     private AutorController gerenciadorAutor;
 
-    public Biblioteca() throws FileNotFoundException {
-        this.gerenciadorLivro = new LivroController();
-        this.gerenciadorAutor = new AutorController();
-        
-//        INICIANDO OS GERENCIADORES PRA QUANDO ABRIR A TELA DA BBT JA TER OS DADOS SALVOSS
-
-        gerenciadorLivro.carregarDoArquivo();
-        gerenciadorAutor.carregarDoArquivo();
-    }
-       
-
-//   Parte dos autores e seus metodos 
- public void addAutor(String nome , String cddNatal) {
-        Autor autor = new Autor();
-        gerenciadorAutor.salvar(S);
-        
+    public Biblioteca(IAutorDao autorDao, ILivroDao livroDao) {
+        this.gerenciadorAutor = new AutorController(autorDao);
+        this.gerenciadorLivro = new LivroController(livroDao);
     }
 
-    public boolean removerAutor(String nome, String cddNatal) {
-        return gerenciadorAutor.remover(nome, cddNatal);
+    // ---- Parte dos autores ----
+
+    public void addAutor(String nome, String cddNatal) {
+        gerenciadorAutor.salvar(nome, cddNatal);
+    }
+
+    public void removerAutor(String nome, String cddNatal) {
+        gerenciadorAutor.remover(nome, cddNatal);
     }
 
     public Autor pesquisarAutor(String nome, String cddNatal) {
         return gerenciadorAutor.pesquisar(nome, cddNatal);
     }
 
-    public String listarAutores() {
-        return gerenciadorAutor.listar();
+    public List<Autor> listarAutores() {
+        return gerenciadorAutor.listarTodos();
     }
 
-    public void salvarAutoresNoArquivo() throws IOException {
-        gerenciadorAutor.salvarNoArquivo();
+    // ---- Parte dos livros ----
+
+    public void addLivro(String titulo, Autor autor, String anoPublicacao) {
+        gerenciadorLivro.salvar(titulo, autor, anoPublicacao);
     }
 
-    public void carregarAutoresDoArquivo() throws FileNotFoundException {
-        gerenciadorAutor.carregarDoArquivo();
+    public void removerLivro(String titulo) {
+        gerenciadorLivro.remover(titulo);
     }
 
-    // Parte dos livros e seus metodos somente retornando 
-    
-
-    public void addLivro(Livro livro) throws IOException {
-        gerenciadorLivro.add(livro);
-        gerenciadorLivro.salvarNoArquivo();
+    public Livro pesquisarLivro(String titulo) {
+        return gerenciadorLivro.pesquisar(titulo);
     }
 
-    public boolean removerLivro(String titulo, Autor autor) {
-        return gerenciadorLivro.remover(titulo, autor);
-    }
-
-    public Livro pesquisarLivro(String titulo, Autor autor) {
-        return gerenciadorLivro.pesquisar(titulo, autor);
-    }
-
-    public String listarLivros() {
-        return gerenciadorLivro.listar();
-    }
-
-    public void salvarLivrosNoArquivo() throws IOException {
-        gerenciadorLivro.salvarNoArquivo();
-    }
-
-    public void carregarLivrosDoArquivo() throws FileNotFoundException {
-        gerenciadorLivro.carregarDoArquivo();
+    public List<Livro> listarLivros() {
+        return gerenciadorLivro.listarTodos();
     }
 }
+
     
     
     
