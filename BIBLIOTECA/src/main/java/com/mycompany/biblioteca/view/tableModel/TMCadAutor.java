@@ -6,7 +6,7 @@ import javax.swing.table.AbstractTableModel;
 
 
 public class TMCadAutor extends AbstractTableModel {
-    private List autores;
+    private List<Autor> autores;
     
     private final int COL_NOME= 0;
     private final int COL_CDD=1;
@@ -15,6 +15,7 @@ public class TMCadAutor extends AbstractTableModel {
        this.autores=lstAutores;
        
    }
+
 
     @Override
     public int getRowCount() {
