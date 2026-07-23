@@ -258,17 +258,17 @@ public class DlgCadAutor extends javax.swing.JDialog {
         return null;
     }
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-        Autor autorEscolhido= this.getObjetoSelecionadoNaGrid();
-        String nomeEscolhido=autorEscolhido.getNome();
-        
-        Autor a= autorController.pesquisar(nomeAntigo,cddAntiga);
-        if (a == null){
-            JOptionPane.showMessageDialog(this, " Nao existe este autor");
-        }else{
-            autorController.remover(nomeAntigo, cddAntiga);
-            JOptionPane.showMessageDialog(this, "Exclusao feita");
-        }
-        this.atualizarTabela();
+    Autor autorEscolhido = this.getObjetoSelecionadoNaGrid();
+    
+    if (autorEscolhido == null) {
+        JOptionPane.showMessageDialog(this, "Selecione um autor na tabela.");
+        return;
+    }
+    
+    autorController.remover(autorEscolhido.getNome(), autorEscolhido.getCddNatal());
+    JOptionPane.showMessageDialog(this, "Exclusão feita com sucesso!");
+    this.atualizarTabela();
+
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void grdCadAutorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_grdCadAutorMouseClicked
@@ -277,23 +277,30 @@ public class DlgCadAutor extends javax.swing.JDialog {
     }//GEN-LAST:event_grdCadAutorMouseClicked
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-       Autor autorEscolhido= this.getObjetoSelecionadoNaGrid();
-       String nomeEscolhido=autorEscolhido.getNome();
-       String cddEscolhida=autorEscolhido.getCddNatal();
-       Autor autorEditando= autorController.pesquisar(nomeEscolhido,cddEscolhida);
-       
-       if(autorEditando == null){
-           JOptionPane.showMessageDialog(this, "Nao existe tal autor");
-           this.editando=false;
-       }else{
-           this.limparCampos();
-           this.habilitarCampos(true);
-           
-           this.objetoParaCampos(autorEditando);
-           this.editando=true;
-           this.nomeAntigo=autorEditando.getNome();
-           this.cddAntiga=autorEditando.getCddNatal();
-       }
+   Autor autorEscolhido = this.getObjetoSelecionadoNaGrid();
+
+    if (autorEscolhido == null) {
+        JOptionPane.showMessageDialog(this, "Selecione um autor na tabela.");
+        return;
+    }
+
+    String nomeEscolhido = autorEscolhido.getNome();
+    String cddEscolhida = autorEscolhido.getCddNatal();
+    Autor autorEditando = autorController.pesquisar(nomeEscolhido, cddEscolhida);
+
+    if (autorEditando == null) {
+        JOptionPane.showMessageDialog(this, "Não existe tal autor");
+        this.editando = false;
+    } else {
+        this.limparCampos();
+        this.habilitarCampos(true);
+
+        this.objetoParaCampos(autorEditando);
+        this.editando = true;
+        this.nomeAntigo = autorEditando.getNome();
+        this.cddAntiga = autorEditando.getCddNatal();
+    }
+
     }//GEN-LAST:event_btnEditarActionPerformed
      
     
