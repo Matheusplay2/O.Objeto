@@ -52,8 +52,7 @@ public class Autor {
     
     @Override
     public String toString(){
-        return "Autor{"+"Nome:"+this.nome+"\n"+
-                "Cidade Natal:"+this.cddNatal+"}";
+        return this.nome;
         }
     
     

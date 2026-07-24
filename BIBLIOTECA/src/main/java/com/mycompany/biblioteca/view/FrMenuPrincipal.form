@@ -88,6 +88,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Cadastro de Livro(s)"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBibliotecaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnCadAutor">
           <Properties>

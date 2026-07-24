@@ -33,6 +33,11 @@ public class FrMenuPrincipal extends javax.swing.JFrame {
         btnCadLivro.setText("Biblioteca");
 
         btnBiblioteca.setText("Cadastro de Livro(s)");
+        btnBiblioteca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBibliotecaActionPerformed(evt);
+            }
+        });
 
         btnCadAutor.setText("Cadastro de Autor(s)");
         btnCadAutor.addActionListener(new java.awt.event.ActionListener() {
@@ -95,6 +100,16 @@ public class FrMenuPrincipal extends javax.swing.JFrame {
         }
     
     }//GEN-LAST:event_btnCadAutorActionPerformed
+
+    private void btnBibliotecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBibliotecaActionPerformed
+        try{
+            DlgCadLivro tela = new DlgCadLivro( this, true );
+            tela.setVisible(true);
+            
+        }catch(SQLException ex){
+             Logger.getLogger(FrMenuPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnBibliotecaActionPerformed
 
   
     public static void main(String args[]) {
