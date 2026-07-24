@@ -89,7 +89,7 @@ public class DlgCadAutor extends javax.swing.JDialog {
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("Cadastro de Autores ");
 
-        btnNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/resources/botao novo1.jpeg"))); // NOI18N
+        btnNovo.setIcon(new javax.swing.ImageIcon("C:\\Users\\matheus henrique\\Faculdade\\O.Objeto\\O.Objeto\\BIBLIOTECA\\src\\main\\java\\com\\mycompany\\biblioteca\\view\\resources\\botao novo1.jpeg")); // NOI18N
         btnNovo.setText("Novo");
         btnNovo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,6 +98,7 @@ public class DlgCadAutor extends javax.swing.JDialog {
         });
         panBotoes.add(btnNovo);
 
+        btnCancelar.setIcon(new javax.swing.ImageIcon("C:\\Users\\matheus henrique\\Faculdade\\O.Objeto\\O.Objeto\\BIBLIOTECA\\src\\main\\java\\com\\mycompany\\biblioteca\\view\\resources\\botao Cancelar.jpeg")); // NOI18N
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,6 +107,7 @@ public class DlgCadAutor extends javax.swing.JDialog {
         });
         panBotoes.add(btnCancelar);
 
+        btnExcluir.setIcon(new javax.swing.ImageIcon("C:\\Users\\matheus henrique\\Faculdade\\O.Objeto\\O.Objeto\\BIBLIOTECA\\src\\main\\java\\com\\mycompany\\biblioteca\\view\\resources\\botao Remover.jpeg")); // NOI18N
         btnExcluir.setText("Excluir");
         btnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,6 +116,7 @@ public class DlgCadAutor extends javax.swing.JDialog {
         });
         panBotoes.add(btnExcluir);
 
+        btnEditar.setIcon(new javax.swing.ImageIcon("C:\\Users\\matheus henrique\\Faculdade\\O.Objeto\\O.Objeto\\BIBLIOTECA\\src\\main\\java\\com\\mycompany\\biblioteca\\view\\resources\\botao editar.jpeg")); // NOI18N
         btnEditar.setText("Editar");
         btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,6 +125,7 @@ public class DlgCadAutor extends javax.swing.JDialog {
         });
         panBotoes.add(btnEditar);
 
+        btnSalvar.setIcon(new javax.swing.ImageIcon("C:\\Users\\matheus henrique\\Faculdade\\O.Objeto\\O.Objeto\\BIBLIOTECA\\src\\main\\java\\com\\mycompany\\biblioteca\\view\\resources\\botao Salvar.jpeg")); // NOI18N
         btnSalvar.setText("Salvar");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,6 +134,7 @@ public class DlgCadAutor extends javax.swing.JDialog {
         });
         panBotoes.add(btnSalvar);
 
+        btnVoltar.setIcon(new javax.swing.ImageIcon("C:\\Users\\matheus henrique\\Faculdade\\O.Objeto\\O.Objeto\\BIBLIOTECA\\src\\main\\java\\com\\mycompany\\biblioteca\\view\\resources\\sair (1).png")); // NOI18N
         btnVoltar.setText("Voltar");
         btnVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -227,19 +232,6 @@ public class DlgCadAutor extends javax.swing.JDialog {
         this.editando=false;
     }//GEN-LAST:event_btnNovoActionPerformed
 
-    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-        if(this.editando){
-            autorController.atualizar(nomeAntigo, cddAntiga, edtNome.getText(),edtCidade.getText());
-            
-        }else{
-            autorController.salvar(edtNome.getText(), edtCidade.getText());
-        }
-        this.limparCampos();
-        this.habilitarCampos(false);
-        this.editando=false;
-        this.atualizarTabela();
-    }//GEN-LAST:event_btnSalvarActionPerformed
-
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.limparCampos();
         this.habilitarCampos(false);
@@ -303,6 +295,19 @@ public class DlgCadAutor extends javax.swing.JDialog {
     }
 
     }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        if(this.editando){
+            autorController.atualizar(nomeAntigo, cddAntiga, edtNome.getText(),edtCidade.getText());
+
+        }else{
+            autorController.salvar(edtNome.getText(), edtCidade.getText());
+        }
+        this.limparCampos();
+        this.habilitarCampos(false);
+        this.editando=false;
+        this.atualizarTabela();
+    }//GEN-LAST:event_btnSalvarActionPerformed
      
     
     
