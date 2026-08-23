@@ -1,5 +1,5 @@
-
 package com.mycompany.despesa.model.entidade;
+
 
 import java.util.Objects;
 
