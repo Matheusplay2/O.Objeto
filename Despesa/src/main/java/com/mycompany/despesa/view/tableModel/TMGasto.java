@@ -1,3 +1,5 @@
+package com.mycompany.despesa.view.tableModel;
+
 
 import com.mycompany.despesa.model.entidade.Gasto;
 import java.time.LocalDate;
