@@ -77,4 +77,20 @@ public class GerenciadorGasto {
             throw new IllegalArgumentException("Data inválida. Use o formato dd/MM/yyyy.");
         }
     }
+    
+    public void editarGasto(int id, String dataDigitada, double valor, String descricao) {
+
+    String dataISO = converterParaISO(dataDigitada);
+
+    if (valor <= 0) {
+        throw new IllegalArgumentException("Valor deve ser maior que zero.");
+    }
+
+    if (descricao == null || descricao.trim().isEmpty()) {
+        throw new IllegalArgumentException("Descrição não pode ser vazia.");
+    }
+
+    Gasto gasto = new Gasto(id, dataISO, valor, descricao);
+    dao.atualizar(gasto);
+   }
 }

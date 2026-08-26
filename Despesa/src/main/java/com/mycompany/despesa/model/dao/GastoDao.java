@@ -17,4 +17,5 @@ public interface GastoDao {
 
     double somarPorMes(int mes, int ano);
     
+    void atualizar(Gasto gasto);
 }

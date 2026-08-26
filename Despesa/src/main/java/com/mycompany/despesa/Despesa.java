@@ -1,10 +1,14 @@
 
 package com.mycompany.despesa;
 
+import com.mycompany.despesa.view.FrCadDespesa;
+
 
 public class Despesa {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-    }
+         
+     FrCadDespesa tela = new FrCadDespesa();
+     tela.setVisible(true);
+  }
 }

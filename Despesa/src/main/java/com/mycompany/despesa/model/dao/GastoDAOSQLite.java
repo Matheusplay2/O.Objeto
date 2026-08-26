@@ -123,4 +123,20 @@ public class GastoDAOSQLite implements GastoDao{
         );
     }
     
+    @Override
+public void atualizar(Gasto gasto) {
+    String sql = "UPDATE gastos SET data = ?, valor = ?, descricao = ? WHERE id = ?";
+    try (Connection conn = ConexaoBanco.conectar();
+         PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+        stmt.setString(1, gasto.getData());
+        stmt.setDouble(2, gasto.getValor());
+        stmt.setString(3, gasto.getDescricao());
+        stmt.setInt(4, gasto.getId());
+        stmt.executeUpdate();
+
+    } catch (SQLException e) {
+        throw new RuntimeException("Erro ao atualizar gasto.", e);
+    }
+}
 }

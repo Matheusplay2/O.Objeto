@@ -11,13 +11,15 @@ public class ConexaoBanco {
       private static final String URL = "jdbc:sqlite:despesas.db";
 
     public static Connection conectar() throws SQLException {
-        try {
-            Class.forName("org.sqlite.JDBC");
-        } catch (ClassNotFoundException e) {
-            throw new SQLException("Driver do SQLite não encontrado.", e);
-        }
-        return DriverManager.getConnection(URL);
+    try {
+        Class.forName("org.sqlite.JDBC");
+    } catch (ClassNotFoundException e) {
+        throw new SQLException("Driver do SQLite não encontrado.", e);
     }
+    Connection conn = DriverManager.getConnection(URL);
+    criarTabelaSeNaoExistir(conn);
+    return conn;
+}
     
     
     /**

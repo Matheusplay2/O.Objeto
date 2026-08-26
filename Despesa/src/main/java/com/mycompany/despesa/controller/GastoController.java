@@ -32,4 +32,8 @@ public class GastoController {
     public double buscarTotalDoMes(int mes, int ano) {
         return gerenciador.calcularTotalDoMes(mes, ano);
     }
+    
+    public void editar(int id, String data, double valor, String descricao) {
+    gerenciador.editarGasto(id, data, valor, descricao);
+    }
 }
